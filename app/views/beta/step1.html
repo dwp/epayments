@@ -15,17 +15,20 @@
 
     <div class="column-two-thirds">
 			<h1 class="heading-large">Your payment details</h1>
-			<form action="javascript:completeAndRedirect();" method="post" autocomplete="off" data-parsley-validate>
-				<label class="form-label" for="ni-number">
-			    National Insurance number
-			    <span class="form-hint">For example, QQ 12 34 56C.</span>
-				</label>
-			  <input style="text-transform: uppercase" pattern="^(([A-Za-z]{2} [0-9]{2} [0-9]{2} [0-9]{2}[ABCDabcd]{1}) | ([A-Za-z]{2}[0-9]{6}[ABCDabcd]{1}))$" oninvalid="setCustomValidity('Please enter a valid reference')" onchange="try{setCustomValidity('')}catch(e){}" maxlength="12" name="ni-number" id="ni-number" type="text" class="form-control" value="">
+			<form action="javascript:completeAndRedirect();" method="post" autocomplete="off">
+				<div class="form-group">
+					<label class="form-label" for="ni-number">
+				    National Insurance number
+				    <span class="form-hint">For example, QQ 12 34 56C.</span>
+					</label>
+				  <input style="text-transform: uppercase" data-parsley-pattern="([A-Za-z]{2} [0-9]{2} [0-9]{2} [0-9]{2}[ABCDabcd]{1})|([A-Za-z]{2} [0-9]{2} [0-9]{2} [0-9]{2} [ABCDabcd]{1})|([A-Za-z]{2}[0-9]{6}[ABCDabcd]{1})" maxlength="12" name="ni-number" id="ni-number" type="text" class="form-control" value="" required>
+				</div>
 
-
-				<label class="form-label" for="amount-number">Amount to pay</label>
-				<span class="poundsign">£</span>
-				<input type="text" style="text-transform: uppercase" pattern="[0-9]+(\.[0-9]{1,2})?|\.[0-9]{2}" maxlength="8" oninvalid="setCustomValidity('Please enter a valid amount')" onchange="try{setCustomValidity('')}catch(e){}" name="amount-number" id="amount-number" class="form-control text" value="" align="top">
+				<div class="form-group">
+					<label class="form-label" for="amount-number">Amount to pay</label>
+					<span class="poundsign">£</span>
+					<input type="text" style="text-transform: uppercase" pattern="[0-9]+(\.[0-9]{1,2})?|\.[0-9]{2}" maxlength="8" name="amount-number" id="amount-number" class="form-control text" value="" align="top" required>
+				</div>
 		    <nav class="form-steps" role="navigation">
 		        <ul>
 		            <li><button type="submit" name="action" value="next" class="button">Next</button></li>
