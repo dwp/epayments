@@ -5,12 +5,13 @@ $(document).ready(function() {
       successClass: "success",
       errorClass: "error",
       classHandler: function (el) {
-          return el.$element.closest('.form-group');
+          return el.$element.parent('.form-group');
       },
       errorsContainer: function (el) {
-          return el.$element.closest('.form-group');
+          return el.$element.parent().find('.error-container');
       },
-      errorTemplate: '<span class="error-message" aria-hidden="true"></span>',
+      errorsWrapper: '<span class="error-message" aria-hidden="true"></span>',
+      errorTemplate: '<span></span>'
   });
 });
 
