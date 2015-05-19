@@ -11,7 +11,7 @@ var path = require('path'),
 
 // Authenticate against the environment-provided credentials, if running
 // the app in production (Heroku, effectively)
-if (env === 'production') {
+if (env === 'development') {
   if (!username || !password) {
     console.log('Username or password is not set, exiting.');
     process.exit(1);
@@ -30,7 +30,7 @@ app.use('/public', express.static(__dirname + '/public'));
 app.use('/public', express.static(__dirname + '/govuk_modules/govuk_template/assets'));
 app.use('/public', express.static(__dirname + '/govuk_modules/govuk_frontend_toolkit'));
 
-app.use(express.favicon(path.join(__dirname, 'govuk_modules', 'govuk_template', 'assets', 'images','favicon.ico'))); 
+app.use(express.favicon(path.join(__dirname, 'govuk_modules', 'govuk_template', 'assets', 'images','favicon.ico')));
 
 
 // send assetPath to all views
