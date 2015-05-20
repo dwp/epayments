@@ -1,7 +1,7 @@
 $(document).ready(function() {
   var errorMessage;
   $('form').parsley({
-      trigger: 'change',
+      trigger: 'submit',
       successClass: "success",
       errorClass: "error",
       classHandler: function (el) {
