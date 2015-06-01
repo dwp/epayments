@@ -145,16 +145,11 @@
     }
 
     label[for="op-DPCancel"] {
-    	display: block;
-    	float: none;
-    	clear: both;
-    	padding: 10px 20px;
-    	color: #fff;
-    	background:#999;
-    	margin: 0 auto 20px;
-    	cursor: pointer;
-    	text-align: center;
-    	width:30%;
+      float: none;
+      display: block;
+      margin: auto;
+      width: 100px;
+      text-align: center
     }
 
     @media (min-width: 769px) {
@@ -163,8 +158,10 @@
     	}
     }
 
-    label[for="op-DPCancel"] span b {
-    	color: #fff;
+    label[for="op-DPCancel"] b {
+      font-weight: normal;
+      cursor: pointer;
+      color: #005ea5;
     }
 
     @media (min-width: 769px) {
@@ -261,7 +258,7 @@
       width: auto;
     }
 
-    nobr {
+    nobr, #noncardGroupHeadingselected {
       display: none;
     }
 
@@ -325,16 +322,41 @@
       }
     }
 
-    /*  .containercell tr > td.one {
-      padding: 15px 0;
+    @media only screen and (min-width : 481px) {
+      label[for="cardCVV"] a {
+        float: left;
+        clear: both;
+      }
     }
 
-    Temp
+    .paydetails {
+      width: 85%;
+      padding: 10px 0;
+      float: left;
+      clear: both;
+      border-bottom: 1px solid #ccc;
+      margin: 0;
+      display: inline-block;
+    }
 
-    .containercell > table tr:nth-child(4) .cardlabel table tr td:nth-child(1), .containercell > table tr:nth-child(4) .cardlabel table tr td:nth-child(4), .containercell > table tr:nth-child(4) .cardlabel table tr td:nth-child(7), .containercell > table tr:nth-child(4) .cardlabel table tr td:nth-child(8), #noncardGroupHeadingselected, #noncardGroupHeadingselected + tr {
+    .paydetails img {
+      width: 40%;
       display: none;
     }
-    */
+
+    @media only screen and (min-width : 768px) {
+      .paydetails {
+        /*width: 60%;*/
+      }
+      .paydetails img {
+        display: inline-block;
+      }
+    }
+
+    table tr.paydetails td.width190 {
+      width:auto;
+    }
+
   </style>
   </head>
 <body class="mainstream">    <script type="text/javascript">document.body.className = ((document.body.className) ? document.body.className + ' js-enabled' : 'js-enabled');</script><div id="skiplink-container">      <div>        <a href="#content" class="skiplink">Skip to main content</a>      </div>    </div>        <!--end global-cookie-message-->

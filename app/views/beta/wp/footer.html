@@ -81,9 +81,36 @@
 
 	// restyle Security code with a separate what is this link
 	$('label[for=cardCVV]').html('<span>Security Code</span><a href="https://secure.worldpay.com/global3/payment/default/help_securitycode_en.html" class="twoinstr" target="_blank" title="Security code help - Opens in new window." style="margin-left:5px;color:#005ea5 !important">What is this?</a>');
-
-
 	$('label[for=name] span').text("Name (as shown on card)");
+
+  // Hide help buttons
+  $('td').find('img[src="/images/buttons/help.gif"]').closest('td').hide();
+
+  // Style payment details
+  var detailsArr = ["Payment method", "Description", "Amount"];
+  var lengthArr = $(detailsArr).size();
+  i = 0;
+
+  while (i < lengthArr) {
+    $('td').find('span:contains('+detailsArr[i]+')').closest('tr').addClass('paydetails');
+    i++;
+  }
+
+  // Remove unwanted cards
+  var cardsArr = ["Diners", "Amex", "AirPlus", "UATP"];
+  var lengthArr = $(cardsArr).size();
+  i = 0;
+
+  while (i < lengthArr) {
+    $('td').find('span:contains('+cardsArr[i]+')').closest('td').hide();
+    i++;
+  }
+
+  $('#noncardGroupHeadingselected').next('tr').hide();
+
+  // Change cancel link
+  cancelLink = '<a href="payment-cancelled" tabindex="250" class="cancelLink">Cancel payment</a>';
+  $('td label').find('b:contains(Cancel)').closest('span').html(cancelLink);
 
 </script>
 </body></html>
