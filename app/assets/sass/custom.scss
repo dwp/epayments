@@ -70,11 +70,15 @@ div.error, .error-summary {
   line-height: 1.3157894737;
   font-weight: 400;
   text-transform: none;
-  display: block;
+  display: none;
   clear: both;
   margin-top: 0;
   margin-bottom: 0;
   padding-bottom: 5px;
+}
+
+.error-message.filled {
+	display: block;
 }
 
 @media (max-width: 640px) {
@@ -158,4 +162,9 @@ div.error, .error-summary {
 	.form-group {
 		margin-bottom: 15px;
 	}
+}
+
+/* Sign out survey */
+.sign-out-survey .form-field-group {
+    margin-bottom: 30px;
 }

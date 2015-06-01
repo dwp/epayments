@@ -15,4 +15,75 @@
   </div>
 </footer>
 <!--end footer-->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+<script>
+  $('label').each(function () {
+    $(this).clone().insertBefore($(this).closest('tr').find('input[type="text"]')).addClass('topLabel');
+  });
+
+  $('td').find('em:contains("Indicates a required field")').closest('td').css("display", "none");
+
+  //revove * Indicates a required field
+  $('td').find('em:contains("Indicates a required field")').closest('td').css( "display", "none" );
+
+  //Removes zip code text from label
+  $('td').find('span:contains("Postcode/ZIP code")').text('Postcode');
+
+  //remove asterix
+  var findAsterix = $('span,label');
+
+  for (var i = 0; i < findAsterix.length; ++i) {
+    findAsterix[i].innerHTML = findAsterix[i].innerHTML.replace(/\*?/g,'');
+  }
+
+  var findSpace = document.getElementsByTagName('span');
+
+  for (var j = 0; j < findSpace.length; ++j) {
+    findSpace[j].innerHTML = findSpace[j].innerHTML.replace(/\&nbsp;/g,'');
+  }
+
+  //remove fax field and label
+  $('#fax').closest('tr').remove();
+
+  //remove region field and label
+  $('#region').closest('tr').remove();
+
+  //remove phone field and label
+  $('#tel').closest('tr').remove();
+
+  $('td').find('span:contains("Payment reference")').closest('tr').hide();
+
+  //clone Country, Expiry date
+  $('td.width190').find('span:contains("Country")').clone().insertBefore($('span:contains("Country")').closest('tr').find('select[name="country"]')).addClass('topLabel countryLabel');
+  $('td.width190').find('span:contains("Expiry date")').clone().insertBefore($('span:contains("Expiry date")').closest('tr').find('select[name="cardExp.month"]')).addClass('topLabel expiryLabel');
+
+  //add for mobile
+  $('head').append('<meta name="viewport" content="width=device-width, initial-scale=1">');
+
+  //add optional
+  $('label[for="address2"] span').text('Address 2 (optional)');
+  $('label[for="address3"] span').text('Address 3 (optional)');
+
+  //liability text on a second line
+
+  var myString = $( "b:contains('Payment to HMRC')" ).text();
+  var arr = myString.split('- ');
+
+  $( "b:contains('Payment to HMRC')" ).html(arr[0] + "</br>" + arr[1]);
+
+  // security code row at the end
+  var rowCode = $('label[for=cardCVV]').parent().parent();
+	var rowCardholder = $('label[for=name]').parent().parent();
+	rowCardholder.after(rowCode);
+
+	// taborder to address new security code position in the form
+	$("#cardCVV").attr("tabindex", 131);
+
+	// restyle Security code with a separate what is this link
+	$('label[for=cardCVV]').html('<span>Security Code</span><a href="https://secure.worldpay.com/global3/payment/default/help_securitycode_en.html" class="twoinstr" target="_blank" title="Security code help - Opens in new window." style="margin-left:5px;color:#005ea5 !important">What is this?</a>');
+
+
+	$('label[for=name] span').text("Name (as shown on card)");
+
+</script>
 </body></html>

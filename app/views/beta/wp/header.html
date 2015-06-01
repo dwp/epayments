@@ -218,7 +218,7 @@
     }
 
     body td.one td.two {
-      padding: 0 0 20px;
+      padding: 0 0 20px 3px;
     }
 
     input[type="text"], input[type="text/"], input[type="search"] {
@@ -273,7 +273,7 @@
       text-align: center;
       height: 2.5em;
       padding: 6px 2px 5px !important;
-      margin: 10px 0px 5px 11px!important;
+      margin: 10px 0px 5px 7px!important;
       -webkit-box-shadow: 0 2px 0 #003518;
       -moz-box-shadow: 0 2px 0 #003518;
       box-shadow: 0 2px 0 #003518;
@@ -289,9 +289,40 @@
       margin: 33px 0 0 0;
     }
 
-    #print_buttons, td.brand {
-      padding-left: 14px;
+    #print_buttons {
+      padding-left: 9px;
       float: left;
+    }
+
+    td.brand {
+      padding-left:6px;
+      float: left;
+    }
+
+    td.brand span {
+      margin-top:6px;
+      float: left;
+    }
+
+    .topLabel {
+      display: none;
+      margin-top: 10px;
+    }
+
+    @media only screen and (max-width : 480px) {
+      body .topLabel{
+      	display: block;
+      }
+      body .two.width190{
+      	display:none;
+      }
+      body table input, body table select {
+        margin-left: 0!important;
+      }
+
+      label[for="cardCVV"]{
+        padding: 5px 10px 0 0px;
+      }
     }
 
     /*  .containercell tr > td.one {
