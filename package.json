@@ -26,5 +26,7 @@
     "grunt-text-replace": "0.3.12",
     "grunt-concurrent": "0.4.3"
   },
-  "devDependencies": {}
+  "devDependencies": {
+    "body-parser": "^1.12.4"
+  }
 }

@@ -109,8 +109,10 @@
   $('#noncardGroupHeadingselected').next('tr').hide();
 
   // Change cancel link
-  cancelLink = '<a href="payment-cancelled" tabindex="250" class="cancelLink">Cancel payment</a>';
+  cancelLink = '<a href="payment-cancelled" tabindex="250" class="cancelLink addition">Cancel payment</a>';
   $('td label').find('b:contains(Cancel)').closest('span').html(cancelLink);
+
+  $('td').find('span:contains(Description)').closest('td').next('td').find('span b').html('Payment to DWP');
 
 </script>
 </body></html>
