@@ -3,7 +3,7 @@ var path = require('path'),
     routes = require(__dirname + '/app/routes.js'),
     app = express(),
     port = (process.env.PORT || 3000),
-    bodyParser = require('body-parser'),
+    //bodyParser = require('body-parser'),
 // Grab environment variables specified in Procfile or as Heroku config vars
     username = process.env.USERNAME,
     password = process.env.PASSWORD,
