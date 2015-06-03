@@ -111,7 +111,7 @@ var cardtype = val;
 }
 }
 function completeAndRedirect(){
-location.href = "./OverpaymentSuccess_GOV.php?refID="+refVal+"&Amount="+amt;
+//location.href = "./OverpaymentSuccess_GOV.php?refID="+refVal+"&Amount="+amt;
 
 }
 </script>
@@ -632,8 +632,8 @@ location.href = "./OverpaymentSuccess_GOV.php?refID="+refVal+"&Amount="+amt;
 				<!--WP Card Type selected -->
 				<tr class="paydetails">
 					<td class="one width190" align="left" valign="top"><span style=" font-family: ; font-size: 10pt; color: #0B0C0C;">Payment method</span>&nbsp;&nbsp;</td>
-					<td class="one width190" align="left" valign="top"><span style=" font-family: ; font-size: 10pt; color: #0B0C0C;"><b>Visa</b></span>&nbsp;</td>
-					<td rowspan="3" class="one" valign="top" align="right"><img src="/public/VISA.gif" style="border:0px;" alt="Visa">&nbsp;&nbsp;&nbsp;</td>
+					<td class="one width190" align="left" valign="top"><span style=" font-family: ; font-size: 10pt; color: #0B0C0C;"><b><script>if(cardtype !=''){document.write(cardtype);}</script></b></span>&nbsp;</td>
+					<td rowspan="3" class="one" valign="top" align="right"><script>if(cardtype !=''){document.write('<img src="/public/'+cardtype+'.gif" alt="'+cardtype+'"/>');}</script>&nbsp;&nbsp;&nbsp;</td>
 
 				</tr>
 

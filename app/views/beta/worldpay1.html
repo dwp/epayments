@@ -490,15 +490,10 @@ img.printonly {display:none;}
    }
   }
   }
-  function completeAndRedirect(){
-  location.href = "worldpay2?refID="+refVal+"&Amount="+amt;
-
-  }
   function sendCardType(value){
-
-  location.href = "worldpay2?refID="+refVal+"&Amount="+amt+"&CardType="+value;
-
+    location.href = "worldpay2?refID="+refVal+"&Amount="+amt+"&CardType="+value;
   }
+
   </script>
   </head>
 
@@ -567,7 +562,7 @@ img.printonly {display:none;}
   </div>
 
 
-<form action="javascript:completeAndRedirect();" method="post" autocomplete="off" enctype="multipart/form-data">
+<form action="javascript:return false;" method="post" autocomplete="off" enctype="multipart/form-data">
 
 <table class="container" cellpadding="0" cellspacing="0" align="center">
 	<tbody><tr>
@@ -699,11 +694,11 @@ img.printonly {display:none;}
  		<table cellpadding="2" cellspacing="3" border="0">
  			<tbody><tr>
 				<td align="center" valign="top" style="display: none;"><input name="op-DPChoose-DINERS^SSL" type="image" src="/public/DINERS.gif" alt="Diners"><br><span style=" font-family: ; font-size: ; color: #0B0C0C;">Diners</span></td>
-				<td align="center" valign="top"><a href="javascript:sendCardType('MasterCard');"><span style=" font-family: ; font-size: ; color: #0B0C0C;"><input name="op-DPChoose-ECMC^SSL" type="image" src="/public/ECMC.gif" alt="MasterCard"><br>MasterCard</span></a></td>
- 				<td align="center" valign="top"><a href="javascript:sendCardType('Visa');"><span style=" font-family: ; font-size: ; color: #0B0C0C;"><input name="op-DPChoose-VISA^SSL" type="image" src="/public/VISA.gif" alt="Visa"><br>Visa</span></a></td>
+				<td align="center" valign="top"><a href="#" rel="MasterCard"><span style=" font-family: ; font-size: ; color: #0B0C0C;"><input name="op-DPChoose-ECMC^SSL" type="image" src="/public/ECMC.gif" alt="MasterCard"><br>MasterCard</span></a></td>
+ 				<td align="center" valign="top"><a href="#" rel="Visa"><span style=" font-family: ; font-size: ; color: #0B0C0C;"><input name="op-DPChoose-VISA^SSL" type="image" src="/public/VISA.gif" alt="Visa"><br>Visa</span></a></td>
  				<td align="center" valign="top" style="display: none;"><span style=" font-family: ; font-size: ; color: #0B0C0C;"><input name="op-DPChoose-AMEX^SSL" type="image" src="/public/AMEX.gif" alt="Amex"><br>Amex</span></td>
- 				<td align="center" valign="top"><a href="javascript:sendCardType('Maestro');"><span style=" font-family: ; font-size: ; color: #0B0C0C;"><input name="op-DPChoose-MAESTRO^SSL" type="image" src="/public/MAESTRO.gif" alt="Maestro"><br>Maestro</span></a></td>
- 				<td align="center" valign="top"><a href="javascript:sendCardType('JCB');"><span style=" font-family: ; font-size: ; color: #0B0C0C;"><input name="op-DPChoose-JCB^SSL" type="image" src="/public/JCB.gif" alt="JCB"><br>JCB</span></a></td>
+ 				<td align="center" valign="top"><a href="#" rel="Maestro"><span style=" font-family: ; font-size: ; color: #0B0C0C;"><input name="op-DPChoose-MAESTRO^SSL" type="image" src="/public/MAESTRO.gif" alt="Maestro"><br>Maestro</span></a></td>
+ 				<td align="center" valign="top"><a href="#" rel="JCB"><span style=" font-family: ; font-size: ; color: #0B0C0C;"><input name="op-DPChoose-JCB^SSL" type="image" src="/public/JCB.gif" alt="JCB"><br>JCB</span></a></td>
 			</tr>
 		</tbody></table>
  	</td>
@@ -926,6 +921,12 @@ img.printonly {display:none;}
 
   $('td').find('span:contains(Description)').closest('td').next('td').find('span b').html('Payment to DWP');
 
+
+  $('form .cardlabel a').on('click', function(e){
+      e.preventDefault();
+      var card = $(this).attr('rel');
+      location.href = "worldpay2?refID="+refVal+"&Amount="+amt+"&CardType="+card;
+  });
 </script>
 
 
