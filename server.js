@@ -11,7 +11,7 @@ var path = require('path'),
 
 // Authenticate against the environment-provided credentials, if running
 // the app in production (Heroku, effectively)
-if (env === 'development') {
+if (env === 'heroku') {
   if (!username || !password) {
     console.log('Username or password is not set, exiting.');
     process.exit(1);
