@@ -11,7 +11,7 @@ module.exports = {
 
     // add your routes here
 
-    app.post('/beta/worldpay1', function (req, res) {
+  /*  app.post('/beta/worldpay1', function (req, res) {
       var nino = req.body.ninumber;
       var amt = req.body.amountnumber;
       console.log(nino + ' - ' + amt);
@@ -24,6 +24,6 @@ module.exports = {
       //res.send(amt);
       res.render('beta/success');
     });
-
+*/
   }
 };
