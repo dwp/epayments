@@ -16,14 +16,14 @@ if (env === 'production') {
     console.log('Username or password is not set, exiting.');
     process.exit(1);
   }
-  //app.use(express.basicAuth(username, password));
+  app.use(express.basicAuth(username, password));
 }
 
 // parse application/x-www-form-urlencoded
-app.use(bodyParser.urlencoded({ extended: false }))
+//app.use(bodyParser.urlencoded({ extended: false }))
 
 // parse application/json
-app.use(bodyParser.json());
+//app.use(bodyParser.json());
 
 // Application settings
 app.engine('html', require(__dirname + '/lib/template-engine.js').__express);
