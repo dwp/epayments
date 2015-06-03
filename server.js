@@ -3,7 +3,6 @@ var path = require('path'),
     routes = require(__dirname + '/app/routes.js'),
     app = express(),
     port = (process.env.PORT || 3000),
-    //bodyParser = require('body-parser'),
 // Grab environment variables specified in Procfile or as Heroku config vars
     username = process.env.USERNAME,
     password = process.env.PASSWORD,
@@ -16,14 +15,8 @@ if (env === 'production') {
     console.log('Username or password is not set, exiting.');
     process.exit(1);
   }
-  app.use(express.basicAuth(username, password));
+  //app.use(express.basicAuth(username, password));
 }
-
-// parse application/x-www-form-urlencoded
-//app.use(bodyParser.urlencoded({ extended: false }))
-
-// parse application/json
-//app.use(bodyParser.json());
 
 // Application settings
 app.engine('html', require(__dirname + '/lib/template-engine.js').__express);
