@@ -8,6 +8,15 @@ var path = require('path'),
     password = process.env.PASSWORD,
     env = process.env.NODE_ENV || 'development';
 
+// Authenticate against the environment-provided credentials, if running
+// the app in production (Heroku, effectively)
+if (env === 'production') {
+  if (!username || !password) {
+    console.log('Username or password is not set, exiting.');
+    process.exit(1);
+  }
+  app.use(express.basicAuth(username, password));
+}
 
 // Application settings
 app.engine('html', require(__dirname + '/lib/template-engine.js').__express);
@@ -58,13 +67,3 @@ app.listen(port);
 console.log('');
 console.log('Listening on port ' + port);
 console.log('');
-
-// Authenticate against the environment-provided credentials, if running
-// the app in production (Heroku, effectively)
-if (env === 'production') {
-  if (!username || !password) {
-    console.log('Username or password is not set, exiting.');
-    process.exit(1);
-  }
-  app.use(express.basicAuth(username, password));
-}
