@@ -16,5 +16,5 @@ $(document).ready(function() {
 });
 
 function completeAndRedirect(){
-  location.href = "/beta/worldpay1?refID="+document.getElementById('ni-number').value+"&Amount="+document.getElementById('amount-number').value;
+  location.href = "worldpay1?refID="+document.getElementById('ni-number').value+"&Amount="+document.getElementById('amount-number').value;
 }

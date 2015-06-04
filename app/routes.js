@@ -21,5 +21,14 @@ module.exports = {
       res.render('beta/success');
     });
 
+    app.post('/beta/declined/declined', function (req, res) {
+      res.render('beta/declined/declined');
+    });
+
+    app.post('/beta/unsuccessful/rejected', function (req, res) {
+      res.render('beta/unsuccessful/rejected');
+    });
+
+
   }
 };
