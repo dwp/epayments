@@ -22,11 +22,11 @@ module.exports = {
     });
 
     app.get('/beta/d', function (req, res) {
-      res.render('beta/d/start');
+      res.redirect('beta/d/start');
     });
 
     app.get('/beta/u', function (req, res) {
-      res.render('beta/u/start');
+      res.redirect('beta/u/start');
     });
 
     app.post('/beta/d/declined', function (req, res) {
