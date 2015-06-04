@@ -21,14 +21,20 @@ module.exports = {
       res.render('beta/success');
     });
 
-    app.post('/beta/declined/declined', function (req, res) {
-      res.render('beta/declined/declined');
+    app.get('/beta/d', function (req, res) {
+      res.render('beta/d/start');
     });
 
-    app.post('/beta/unsuccessful/rejected', function (req, res) {
-      res.render('beta/unsuccessful/rejected');
+    app.get('/beta/u', function (req, res) {
+      res.render('beta/u/start');
     });
 
+    app.post('/beta/d/declined', function (req, res) {
+      res.render('beta/d/declined');
+    });
 
+    app.post('/beta/u/rejected', function (req, res) {
+      res.render('beta/u/rejected');
+    });
   }
 };
