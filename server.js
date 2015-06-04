@@ -4,8 +4,8 @@ var path = require('path'),
     app = express(),
     port = (process.env.PORT || 3000),
 // Grab environment variables specified in Procfile or as Heroku config vars
-    username = process.env.USERNAME,
-    password = process.env.PASSWORD,
+    username = 'epay',
+    password = 'Summer2012',
     env = process.env.NODE_ENV || 'development';
 
 // Authenticate against the environment-provided credentials, if running
