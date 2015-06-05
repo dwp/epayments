@@ -36,8 +36,10 @@ strong {font-weight: bold;}
 	}
 }
 
-#amount-number {
-	max-width: 150px;
+@media screen and (min-width: 641px) {
+	#amount-number {
+		max-width: 150px;
+	}
 }
 
 // Errors
@@ -167,4 +169,42 @@ div.error, .error-summary {
 /* Sign out survey */
 .sign-out-survey .form-field-group {
     margin-bottom: 30px;
+}
+
+.helper-mobile {
+  display: none;
+}
+
+@media screen and (max-width: 640px) {
+    .helper-mobile {
+        display: block;
+        border-bottom: 1px solid #bfc1c3
+    }
+
+		.helper-mobile + .left-col {
+			display: none;
+		}
+}
+
+@media screen and (min-width: 641px) {
+		.helper-mobile + .left-col {
+			display: block!important;
+		}
+}
+
+.helper-mobile a {
+    display: block;
+    background-image: url("/public/images/mobile-nav.png");
+    background-position: right 22px;
+    background-repeat: no-repeat;
+    font-size: 17px;
+    color: #2e3191;
+    text-decoration: none;
+    font-weight: 300;
+    padding: 1em 0;
+    line-height: 1em;
+    cursor: pointer
+}
+.helper-mobile a.open-helper {
+    background-position: right -25px
 }

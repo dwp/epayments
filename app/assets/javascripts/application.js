@@ -18,3 +18,12 @@ $(document).ready(function() {
 function completeAndRedirect(){
   location.href = "worldpay1?refID="+document.getElementById('ni-number').value+"&Amount="+document.getElementById('amount-number').value;
 }
+
+$(function() {
+	// Mobile specific - Nav
+	$('.helper-mobile a').click(function(){
+		$( ".left-col" ).slideToggle(0);
+		$(this).toggleClass("open-helper")
+		return true;
+	});
+});
