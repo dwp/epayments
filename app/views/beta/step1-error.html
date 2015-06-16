@@ -16,8 +16,12 @@
     <div class="column-two-thirds">
 			<h1 class="heading-large">Your payment details</h1>
 			<form action="javascript:postDetails();" method="post" autocomplete="off">
-				<div class="form-group">
-					<span class="error-container"></span>
+				<div class="form-group error">
+					<span class="error-container">
+						<span class="error-message filled" aria-hidden="true">
+							<span>Reference number not found</span>
+						</span>
+					</span>
 					<label class="form-label" for="ninumber">
 				    National Insurance number
 				    <span class="form-hint">For example, QQ 12 34 56C.</span>
@@ -34,7 +38,7 @@
 		    <nav class="form-steps" role="navigation">
 		        <ul>
 		            <li><button type="submit" name="action" value="next" class="button">Next</button></li>
-		            <li><a id="backButtonBottom" href="declaration">Back</a></li>
+		            <li><a id="backButtonBottom" href="/">Back</a></li>
 		        </ul>
 		    </nav>
 			</form>
