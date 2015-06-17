@@ -29,6 +29,10 @@ module.exports = {
       res.redirect('beta/u/start');
     });
 
+    app.get('/beta/dec', function (req, res) {
+      res.redirect('beta/dec/start');
+    });
+
     app.post('/beta/d/declined', function (req, res) {
       res.render('beta/d/declined');
     });
