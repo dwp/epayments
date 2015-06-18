@@ -30,7 +30,11 @@ module.exports = {
     });
 
     app.get('/beta/dec', function (req, res) {
-      res.redirect('beta/dec/start');
+      res.redirect('/beta2/start');
+    });
+
+    app.get('/beta2/', function (req, res) {
+      res.redirect('beta2/start');
     });
 
     app.post('/beta/d/declined', function (req, res) {
