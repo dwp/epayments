@@ -2,7 +2,7 @@ module.exports = {
   bind : function (app) {
 
     app.get('/', function (req, res) {
-      res.render('beta/index');
+      res.render('beta2/index');
     });
 
     app.get('/examples/template-data', function (req, res) {
@@ -33,12 +33,20 @@ module.exports = {
       res.redirect('beta/u/start');
     });
 
+    app.get('/beta2/d', function (req, res) {
+      res.redirect('beta2/d/start');
+    });
+
+    app.get('/beta2/u', function (req, res) {
+      res.redirect('beta2/u/start');
+    });
+
     app.get('/beta/dec', function (req, res) {
       res.redirect('/beta2/start');
     });
 
     app.get('/beta2/', function (req, res) {
-      res.redirect('beta2/start');
+      res.redirect('beta2/index');
     });
 
     app.post('/beta/d/declined', function (req, res) {
