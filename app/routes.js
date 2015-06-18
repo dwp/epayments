@@ -21,6 +21,10 @@ module.exports = {
       res.render('beta/success');
     });
 
+    app.post('/beta2/success', function (req, res) {
+      res.render('beta2/success');
+    });
+
     app.get('/beta/d', function (req, res) {
       res.redirect('beta/d/start');
     });
