@@ -56,5 +56,13 @@ module.exports = {
     app.post('/beta/u/rejected', function (req, res) {
       res.render('beta/u/rejected');
     });
+
+    app.post('/beta2/d/declined', function (req, res) {
+      res.render('beta2/d/declined');
+    });
+
+    app.post('/beta2/u/rejected', function (req, res) {
+      res.render('beta2/u/rejected');
+    });
   }
 };
