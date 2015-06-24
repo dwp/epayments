@@ -41,12 +41,24 @@ module.exports = {
       res.redirect('beta2/u/start');
     });
 
+    app.get('/beta3/d', function (req, res) {
+      res.redirect('beta3/d/start');
+    });
+
+    app.get('/beta3/u', function (req, res) {
+      res.redirect('beta3/u/start');
+    });
+
     app.get('/beta/dec', function (req, res) {
       res.redirect('/beta2/start');
     });
 
     app.get('/beta2/', function (req, res) {
       res.redirect('beta2/index');
+    });
+
+    app.get('/beta3/', function (req, res) {
+      res.redirect('beta3/index');
     });
 
     app.post('/beta/d/declined', function (req, res) {
@@ -63,6 +75,14 @@ module.exports = {
 
     app.post('/beta2/u/rejected', function (req, res) {
       res.render('beta2/u/rejected');
+    });
+
+    app.post('/beta3/d/declined', function (req, res) {
+      res.render('beta3/d/declined');
+    });
+
+    app.post('/beta3/u/rejected', function (req, res) {
+      res.render('beta3/u/rejected');
     });
   }
 };
