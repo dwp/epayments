@@ -2,7 +2,7 @@ module.exports = {
   bind : function (app) {
 
     app.get('/', function (req, res) {
-      res.render('beta2/index');
+      res.render('index');
     });
 
     app.get('/examples/template-data', function (req, res) {
