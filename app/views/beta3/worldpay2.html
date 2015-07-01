@@ -1300,8 +1300,6 @@ For an example of the HTML code that this files need to work correctly with your
     $(this).clone().insertBefore($(this).closest('tr').find('input[type="text"]')).addClass('topLabel');
   });
 
-  $('td').find('em:contains("Indicates a required field")').closest('td').css("display", "none");
-
   //revove * Indicates a required field
   $('td').find('em:contains("Indicates a required field")').closest('td').css( "display", "none" );
 
