@@ -3,7 +3,7 @@ module.exports = function(grunt){
     // Clean
     clean:{
       folders: ['public', 'govuk_modules'],
-      mustache_html: ["app/dist/*.html"]
+      mustache_html: ["../src/main/webapp/*.html"]
     },
     // Builds Sass
     sass: {
@@ -114,7 +114,7 @@ module.exports = function(grunt){
       development: {
         options: {
           src: 'mustache',
-          dist: 'app/dist',
+          dist: '../src/main/webapp/',
           type: 'mustache' // mustache Or hbs
         }
       }
