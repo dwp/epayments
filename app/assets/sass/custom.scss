@@ -220,3 +220,21 @@ div.error, .error-summary {
 .helper-mobile a.open-helper {
     background-position: right -25px
 }
+
+#global-header .header-proposition #proposition-menu {
+    margin-top: 5px; 
+    float:left;
+}
+
+@media (max-width: 768px) {
+    #global-header .header-proposition #proposition-menu {
+          clear: both;
+          margin-left: 15px;
+    } 
+}
+
+#global-header .header-proposition #proposition-link, #global-header .header-proposition #proposition-links {
+    clear: both;
+    margin: 2px 0 0 0;
+    padding: 0; 
+}

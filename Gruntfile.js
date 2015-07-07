@@ -1,8 +1,10 @@
 module.exports = function(grunt){
   grunt.initConfig({
     // Clean
-    clean: ['public', 'govuk_modules'],
-
+    clean:{
+      folders: ['public', 'govuk_modules'],
+      mustache_html: ["app/dist/*.html"]
+    },
     // Builds Sass
     sass: {
       dev: {
@@ -78,6 +80,13 @@ module.exports = function(grunt){
         options: {
           spawn: false,
         }
+      },
+      mustache: {
+        files: ['mustache/**/*.*'],
+        tasks: ['mustache_hogan_html:development'],
+        options: {
+          spawn: false,
+        }
       }
     },
 
@@ -100,6 +109,15 @@ module.exports = function(grunt){
                 logConcurrentOutput: true
             }
         }
+    },
+    mustache_hogan_html: {
+      development: {
+        options: {
+          src: 'mustache',
+          dist: 'app/dist',
+          type: 'mustache' // mustache Or hbs
+        }
+      }
     }
   });
 
@@ -110,7 +128,8 @@ module.exports = function(grunt){
     'grunt-sass',
     'grunt-nodemon',
     'grunt-text-replace',
-    'grunt-concurrent'
+    'grunt-concurrent',
+    'grunt-mustache-hogan-html'
   ].forEach(function (task) {
     grunt.loadNpmTasks(task);
   });
@@ -131,12 +150,19 @@ module.exports = function(grunt){
     'copy',
     'convert_template',
     'replace',
-    'sass'
+    'sass',
+    'mustache_hogan_html:development'
   ]);
 
   grunt.registerTask('default', [
     'generate-assets',
     'concurrent:target'
+  ]);
+
+  grunt.registerTask('mustache', [
+    'clean:mustache_html',
+    'mustache_hogan_html:development',
+    'watch:mustache'
   ]);
 
   grunt.event.on('watch', function(action, filepath, target) {
