@@ -1,0 +1,53 @@
+{{<layout}}
+
+{{$pageTitle}}
+	GOV.UK - Benefit debt repayments
+{{/pageTitle}}
+
+{{$content}}
+
+<main id="content" role="main">
+	{{>includes/phase_banner}}
+	<div>
+		<div class="reference-number-wrap highlighted">
+	    <h1 class="heading-medium"><i class="icon-ok"></i>
+				<span>Your payment has been successful</span>
+			</h1>
+			<div class="pre-title">Payment reference: 43236WPGV</div>
+		</div>
+
+  </div>
+	<div class="clear">
+    <h2 class="heading-medium">What happens next</h2>
+    <p>If you have not paid the full amount you will be contacted by Department for Work and Pensions Debt Management.</p>
+  </div>
+	<a class="button" href="/beta2/exit-survey">Finish</a>
+</main>
+
+{{/content}}
+<script type="text/javascript">
+	var v1 = parent.document.URL.substring(parent.document.URL.indexOf('?'), parent.document.URL.length);
+	var qsParm = new Array();
+	var query = window.location.search.substring(1);
+	var parms = query.split('&');
+
+	for (var i=0; i<parms.length; i++) {
+		var pos = parms[i].indexOf('=');
+		if (pos > 0) {
+			var key = parms[i].substring(0,pos);
+			var val = parms[i].substring(pos+1);
+			if(key==='refID') {
+ 				var refVal = val;
+ 			}
+	 		if(key==='Amount'){
+	 			var amt = val;
+	 		}
+		}
+	}
+
+	function completeAndRedirect(){
+		var win = window.open("./OverpaymentsReceipt.htm?refID="+refVal+"&Amount="+amt,"_blank");
+		win.focus();
+	}
+</script>
+{{/layout}}

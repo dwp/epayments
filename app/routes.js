@@ -33,6 +33,10 @@ module.exports = {
       res.render('beta4/success');
     });
 
+    app.post('/beta5/success', function (req, res) {
+      res.render('beta5/success');
+    });
+
     app.get('/beta/d', function (req, res) {
       res.redirect('beta/d/start');
     });
@@ -65,6 +69,14 @@ module.exports = {
       res.redirect('beta4/u/start');
     });
 
+    app.get('/beta5/d', function (req, res) {
+      res.redirect('beta5/d/start');
+    });
+
+    app.get('/beta5/u', function (req, res) {
+      res.redirect('beta5/u/start');
+    });
+
     app.get('/beta/dec', function (req, res) {
       res.redirect('/beta2/start');
     });
@@ -79,6 +91,10 @@ module.exports = {
 
     app.get('/beta4/', function (req, res) {
       res.redirect('beta4/index');
+    });
+
+    app.get('/beta5/', function (req, res) {
+      res.redirect('beta5/index');
     });
 
     app.post('/beta/d/declined', function (req, res) {
@@ -111,6 +127,14 @@ module.exports = {
 
     app.post('/beta4/u/rejected', function (req, res) {
       res.render('beta4/u/rejected');
+    });
+
+    app.post('/beta5/d/declined', function (req, res) {
+      res.render('beta5/d/declined');
+    });
+
+    app.post('/beta5/u/rejected', function (req, res) {
+      res.render('beta5/u/rejected');
     });
   }
 };
