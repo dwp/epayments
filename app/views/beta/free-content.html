@@ -1,13 +1,13 @@
-{{<layout}}
+{% extends "layout.html" %}
 
-{{$pageTitle}}
+{% block page_title %}
 	GOV.UK - Benefit debt repayments
-{{/pageTitle}}
+{% endblock %}
 
-{{$content}}
+{% block content %}
 
 <main id="content" role="main">
-	{{>includes/phase_banner}}
+	{% include "includes/phase_banner.html" %}
 	<div>
 		<h1 class="heading-large">Basic page with content</h1>
     <p class="lede">Donec rutrum ultrices condimentum. Duis egestas sapien est, a rutrum tortor mattis nec. Vivamus leo nisi, bibendum nec varius a, gravida vel est. Ut sit amet dictum dui. Ut pretium felis neque. Nulla facilisi. Maecenas in posuere justo, congue dignissim tortor. Mauris sollicitudin quam turpis, vel hendrerit purus laoreet at. Donec mollis mi sollicitudin justo mattis elementum.</p>
@@ -19,6 +19,6 @@
 
 </main>
 
-{{/content}}
+{% endblock %}
 
-{{/layout}}
+

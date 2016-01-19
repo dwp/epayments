@@ -1,10 +1,10 @@
-{{<govuk_template}}
+{% extends "govuk_template.html" %}
 
-{{$head}}
+{% block head %}
   {{>includes/elements_head}}
-{{/head}}
+{% endblock %}
 
-{{$content}}
+{% block content %}
 <main id="content" role="main">
 
   <a href="/examples/" class="example-back-link">Back to the GOV.UK prototype kit examples</a>
@@ -57,6 +57,6 @@
   </div>
 
 </main><!-- / #page-container -->
-{{/content}}
+{% endblock %}
 
-{{/govuk_template}}
+

@@ -24,6 +24,14 @@ function completeAndRedirect(){
   location.href = "worldpay1?refID="+document.getElementById('ni-number').value+"&Amount="+document.getElementById('amount-number').value;
 }
 
+function postDetails(){
+  var nino, amt;
+  nino = $('#ni-number').val();
+  amt = $('#amount-number').val();
+
+  location.href = "worldpay1?refID="+nino+"&Amount="+amt;
+};
+
 $(function() {
 	// Mobile specific - Nav
 	$('.helper-mobile a').click(function(){

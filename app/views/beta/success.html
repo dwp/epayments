@@ -1,13 +1,13 @@
-{{<layout}}
+{% extends "layout.html" %}
 
-{{$pageTitle}}
+{% block page_title %}
 	GOV.UK - Benefit debt repayments
-{{/pageTitle}}
+{% endblock %}
 
-{{$content}}
+{% block content %}
 
 <main id="content" role="main">
-	{{>includes/phase_banner}}
+	{% include "includes/phase_banner.html" %}
 	<div>
 		<div class="reference-number-wrap highlighted">
 	    <h1 class="heading-medium"><i class="icon-ok"></i>
@@ -25,7 +25,7 @@
 	<a class="button" href="/beta/exit-survey">Finish</a>
 </main>
 
-{{/content}}
+{% endblock %}
 <script type="text/javascript">
 	var v1 = parent.document.URL.substring(parent.document.URL.indexOf('?'), parent.document.URL.length);
 	var qsParm = new Array();
@@ -51,4 +51,4 @@
 		win.focus();
 	}
 </script>
-{{/layout}}
+

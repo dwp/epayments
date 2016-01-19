@@ -1,14 +1,14 @@
-{{<govuk_template}}
+{% extends "govuk_template.html" %}
 
-{{$head}}
+{% block head %}
   {{>includes/examples_head}}
-{{/head}}
+{% endblock %}
 
-{{$headerClass}}with-proposition{{/headerClass}}
+{% block headerClass %}with-proposition{% endblock %}
 
-{{$propositionHeader}}
+{% block proposition_header %}
   <div class="area header-proposition">Propositional navigation area</div>
-{{/propositionHeader}}
+{% endblock %}
 
 {{$insideHeader}}
 <div class="area">Inside header area</div>
@@ -22,15 +22,15 @@
 <div class="area">Cookie message</div>
 {{/cookieMessage}}
 
-{{$headerClass}}with-proposition{{/headerClass}}
+{% block headerClass %}with-proposition{% endblock %}
 
-{{$content}}
+{% block content %}
 <main class="area">Content area</main>
-{{/content}}
+{% endblock %}
 
-{{$bodyEnd}}
+{% block body_end %}
 <div class="area">Body end area</div>
-{{/bodyEnd}}
+{% endblock %}
 
 {{$footerTop}}
 <div class="area">Footer top area</div>
@@ -42,4 +42,4 @@
 
 
 
-{{/govuk_template}}
+

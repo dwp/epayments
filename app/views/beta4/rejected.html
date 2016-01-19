@@ -1,13 +1,13 @@
-{{<layout}}
+{% extends "layout.html" %}
 
-{{$pageTitle}}
+{% block page_title %}
 	GOV.UK - Benefit debt repayments
-{{/pageTitle}}
+{% endblock %}
 
-{{$content}}
+{% block content %}
 
 <main id="content" role="main">
-	{{>includes/phase_banner}}
+	{% include "includes/phase_banner.html" %}
 	<div class="grid-row">
 
     <div class="column-two-thirds">
@@ -17,7 +17,7 @@
 			<p>The online service has been unable to process your payment at this time.</p>
       <p>Telephone Debt Management on 0345 850 0293 to discuss other ways to pay or try again later <br>Textphone: 0345 604 6697 <br>Calling from abroad: +44 0161 904 1233</p>
 			<p><strong>Opening times:</strong> <br>Monday to Friday: 8am to 8pm <br>Saturday: 9am to 4pm <br><a href="https://www.gov.uk/call-charges" target="_blank" onmousedown="trackEvent('/allowance/benefits','Call charges');" onkeydown="trackEvent('/allowance/benefits','Call charges');">Find out about call charges</a></p>
-			
+
       <nav class="form-steps" role="navigation">
           <ul>
               <li><a class="button" href="/beta2/exit-survey">Finish</a></li>
@@ -28,6 +28,4 @@
 
 </main>
 
-{{/content}}
-
-{{/layout}}
+{% endblock %}

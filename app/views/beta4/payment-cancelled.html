@@ -1,15 +1,15 @@
-{{<layout}}
+{% extends "layout.html" %}
 
-{{$pageTitle}}
+{% block page_title %}
 	GOV.UK - Benefit debt repayments
-{{/pageTitle}}
+{% endblock %}
 
-{{$content}}
+{% block content %}
 
 <main id="content" role="main">
-	{{>includes/phase_banner}}
+	{% include "includes/phase_banner.html" %}
 	<div class="grid-row">
-		
+
     <div class="column-two-thirds">
 			<h1 class="heading-large">Payment cancelled</h1>
 			<p class="lede">You have cancelled the payment process.</p>
@@ -25,6 +25,4 @@
 
 </main>
 
-{{/content}}
-
-{{/layout}}
+{% endblock %}

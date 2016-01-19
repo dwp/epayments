@@ -1,13 +1,13 @@
-{{<layout}}
+{% extends "layout.html" %}
 
-{{$pageTitle}}
+{% block page_title %}
 	GOV.UK - Benefit debt repayments
-{{/pageTitle}}
+{% endblock %}
 
-{{$content}}
+{% block content %}
 
 <main id="content" role="main">
-	{{>includes/phase_banner}}
+	{% include "includes/phase_banner.html" %}
 	<div class="grid-row">
 
     <div class="column-two-thirds">
@@ -40,14 +40,4 @@
 
 </main>
 
-{{/content}}
-{{/layout}}
-<script>
-	function postDetails(){
-		var nino, amt;
-		nino = $('#ni-number').val();
-		amt = $('#amount-number').val();
-
-		location.href = "worldpay1?refID="+nino+"&Amount="+amt;
-	};
-</script>
+{% endblock %}
